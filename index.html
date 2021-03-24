@@ -60,9 +60,9 @@
       console.log('start')
       loadJSON(function(response) {
         // Parse JSON string into object
-        const json = JSON.parse(response);
+        var json = JSON.parse(response);
 
-        var count = Object.keys(myObject).length;
+        var count = Object.keys(json).length;
         console.log(count);
   
         console.log('json parsed')
