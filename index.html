@@ -60,7 +60,11 @@
       console.log('start')
       loadJSON(function(response) {
         // Parse JSON string into object
-        var json = JSON.parse(response);
+        const json = JSON.parse(response);
+
+        var count = Object.keys(myObject).length;
+        console.log(count);
+  
         console.log('json parsed')
         console.log(json.length); // this will log out the json object
         for (var i = 0; i < json.length; i++) {
