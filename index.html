@@ -66,34 +66,36 @@
           var longitude = row['longitude'];
           var latitude = row['latitude'];
 
+          console.log(longitude)
+
           longitudes.push(longitude);
           latitudes.push(latitude);
         }
       });
 
-      for (var i = 0; i < 10; i++) {
-        const point = { //Create a point
-          type: "point",
-          longitude: longitudes[i],
-          latitude: latitudes[i]
-        };
-
-        const simpleMarkerSymbol = {
-          type: "simple-marker",
-          color: [226, 119, 40], // Orange
-          outline: {
-            color: [255, 255, 255], // White
-            width: 1
-          }
-        };
-
-        const pointGraphic = new Graphic({
-          geometry: point,
-          symbol: simpleMarkerSymbol
-        });
-
-        graphicsLayer.add(pointGraphic);
-      }
+      // for (var i = 0; i < longitudes; i++) {
+      //   const point = { // Create a point
+      //     type: "point",
+      //     longitude: longitudes[i],
+      //     latitude: latitudes[i]
+      //   };
+      //
+      //   const simpleMarkerSymbol = {
+      //     type: "simple-marker",
+      //     color: [226, 119, 40], // Orange
+      //     outline: {
+      //       color: [255, 255, 255], // White
+      //       width: 1
+      //     }
+      //   };
+      //
+      //   const pointGraphic = new Graphic({
+      //     geometry: point,
+      //     symbol: simpleMarkerSymbol
+      //   });
+      //
+      //   graphicsLayer.add(pointGraphic);
+      // }
 
     });
   </script>
