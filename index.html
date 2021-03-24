@@ -39,6 +39,7 @@
       const graphicsLayer = new GraphicsLayer();
       map.add(graphicsLayer);
 
+      console.log('start')
       function loadJSON(callback) {
 
         var xobj = new XMLHttpRequest();
@@ -52,6 +53,7 @@
         };
         xobj.send(null);
       }
+      console.log('end')
 
 
 
