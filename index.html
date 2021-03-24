@@ -39,7 +39,7 @@
       const graphicsLayer = new GraphicsLayer();
       map.add(graphicsLayer);
 
-      console.log('start')
+
       function loadJSON(callback) {
 
         var xobj = new XMLHttpRequest();
@@ -53,23 +53,25 @@
         };
         xobj.send(null);
       }
-      console.log('end')
 
 
 
 
+      console.log('start')
       loadJSON(function(response) {
         // Parse JSON string into object
         var json = JSON.parse(response);
-
+        console.log('json parsed')
         // console.log(json); // this will log out the json object
         for (var i = 0; i < json.length; i++) {
-          var row = json[i];
+          console.log('for loop entered')
 
+          var row = json[i];
+          console.log('row accessed')
           var longitude = row["longitude"];
           var latitude = row["latitude"];
 
-          alert("success")
+          console.log('success')
 
           longitudes.push(longitude);
           latitudes.push(latitude);
