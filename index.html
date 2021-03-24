@@ -62,19 +62,19 @@
         // Parse JSON string into object
         var json = JSON.parse(response);
         console.log('json parsed')
-        // console.log(json); // this will log out the json object
+        console.log(json); // this will log out the json object
         for (var i = 0; i < json.length; i++) {
-          console.log('for loop entered')
+          console.log(i)
 
-          var row = json[i];
-          console.log('row accessed')
-          var longitude = row["longitude"];
-          var latitude = row["latitude"];
-
-          console.log('success')
-
-          longitudes.push(longitude);
-          latitudes.push(latitude);
+          // var row = json[i];
+          // console.log('row accessed')
+          // var longitude = row["longitude"];
+          // var latitude = row["latitude"];
+          //
+          // console.log('success')
+          //
+          // longitudes.push(longitude);
+          // latitudes.push(latitude);
         }
       });
 
