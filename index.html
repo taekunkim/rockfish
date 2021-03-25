@@ -35,7 +35,7 @@
       const view = new MapView({
         map: map,
         center: [-119, 33.5], // Longitude, latitude
-        zoom: 8, // Zoom level
+        zoom: 6, // Zoom level
         container: "viewDiv" // Div element
       });
 
@@ -74,10 +74,6 @@
 
               graphicsLayer.add(pointGraphic);
           }
-
-        function choose_species(species) {
-            alert('you chose' + species);
-        }
       });
 
     });
@@ -94,5 +90,11 @@
   <button onclick="choose_species('coastal_bycatch')">Coastal Bycatch</button>
   <button onclick="choose_species('coastal_unfished')">Coastal Unfished</button>
 </body>
+
+<script>
+    function choose_species(species) {
+        alert('you chose' + species);
+    }
+</script>
 
 </html>
