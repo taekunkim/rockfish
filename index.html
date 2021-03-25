@@ -47,10 +47,8 @@
       //     console.log(data);
       // }
 
-      d3.csv("1960.csv").then(function(data) {
-        console.log(data[0]);
-      });
-
+       const url = 'https://raw.githubusercontent.com/taekunkim/rockfish/main/1960.csv';
+       console.log(fetch(url));
 
 
 
