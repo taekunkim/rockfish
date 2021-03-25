@@ -21,16 +21,27 @@
   <script src="https://d3js.org/d3.v6.min.js"></script>
 
   <script>
+
+    const fetchText = async (url) => {
+        const response = await fetch(url);
+        return await response.text();
+    }
+
+    const csv_url = 'https://raw.githubusercontent.com/taekunkim/rockfish/main/1960.csv';
+    fetchText(csv_url).then(text => {
+        console.log(d3.csvParse(text));
+    })
+
+
+
+
     var longitudes = [];
     var latitudes = [];
-
-    const url = 'https://raw.githubusercontent.com/taekunkim/rockfish/main/1960.csv';
-    const promise = fetch(url);
-    promise.then(response => {
-        response.text().then(text => {
-            console.log(text);
-        })
-    })
+    // fetch(url).then(response => {
+    //     response.text().then(text => {
+    //         console.log(text);
+    //     })
+    // })
 
 
     require(["esri/config", "esri/Map", "esri/views/MapView", "esri/Graphic", "esri/layers/GraphicsLayer"], function(esriConfig, Map, MapView, Graphic, GraphicsLayer) {
