@@ -18,6 +18,7 @@
 
   <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
   <script src="https://js.arcgis.com/4.18/"></script>
+  <script src="https://d3js.org/d3.v4.js"></script>
 
   <script>
     var longitudes = [];
@@ -39,12 +40,16 @@
       const graphicsLayer = new GraphicsLayer();
       map.add(graphicsLayer);
 
-      getData()
-      async function getData() {
-          const response = await fetch('1960.csv');
-          const data = await response.text();
-          console.log(data);
-      }
+      // getData()
+      // async function getData() {
+      //     const response = await fetch('1960.csv');
+      //     const data = await response.text();
+      //     console.log(data);
+      // }
+
+      d3.csv("/data/cities.csv").then(function(data) {
+        console.log(data[0]);
+      });
 
 
 
