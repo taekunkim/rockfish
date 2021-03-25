@@ -73,22 +73,12 @@
               });
 
               graphicsLayer.add(pointGraphic);
-
-
           }
+
+        function choose_species(species) {
+            alert('you chose' + species);
+        }
       });
-
-
-
-
-
-      for (var i = 0; i < longitudes; i++) {
-
-
-
-
-
-      }
 
     });
   </script>
@@ -97,6 +87,12 @@
 
 <body>
   <div id="viewDiv"></div>
+
+  <button onclick="choose_species('oceanic')">Oceanic</button>
+  <button onclick="choose_species('coastal_oceanic_fished')">Coastal Oceanic Fished</button>
+  <button onclick="choose_species('coastal_fished')">Coastal Fished</button>
+  <button onclick="choose_species('coastal_bycatch')">Coastal Bycatch</button>
+  <button onclick="choose_species('coastal_unfished')">Coastal Unfished</button>
 </body>
 
 </html>
