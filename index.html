@@ -50,8 +50,32 @@
           for(var i = 0; i < data.length; i++) {
               // longitudes.push(data[i]['longitude'])
               // latitudes.push(data[i]['latitude'])
-              console.log(data[i]['longitude'])
-              console.log(data[i]['latitude'])
+              var longitude_val = +data[i]['longitude'];
+              var latitude_val = +data[i]['latitude'];
+
+              const point = { // Create a point
+                type: "point",
+                longitude: longitude_val,
+                latitude: latitude_val
+              };
+
+              const simpleMarkerSymbol = {
+                type: "simple-marker",
+                color: [226, 119, 40], // Orange
+                outline: {
+                  color: [255, 255, 255], // White
+                  width: 1
+                }
+              };
+
+              const pointGraphic = new Graphic({
+                geometry: point,
+                symbol: simpleMarkerSymbol
+              });
+
+              graphicsLayer.add(pointGraphic);
+
+
           }
       });
 
@@ -61,44 +85,14 @@
 
 
 
-      //   for (var i = 0; i < json.length; i++) {
-      //     console.log(i)
-      //
-      //     var row = json[i];
-      //     console.log('row accessed')
-      //     var longitude = row["longitude"];
-      //     var latitude = row["latitude"];
-      //
-      //     console.log('success')
-      //
-      //     longitudes.push(longitude);
-      //     latitudes.push(latitude);
-      //   }
-      // });
-      //
-      // // for (var i = 0; i < longitudes; i++) {
-      // //   const point = { // Create a point
-      // //     type: "point",
-      // //     longitude: longitudes[i],
-      // //     latitude: latitudes[i]
-      // //   };
-      // //
-      // //   const simpleMarkerSymbol = {
-      // //     type: "simple-marker",
-      // //     color: [226, 119, 40], // Orange
-      // //     outline: {
-      // //       color: [255, 255, 255], // White
-      // //       width: 1
-      // //     }
-      // //   };
-      // //
-      // //   const pointGraphic = new Graphic({
-      // //     geometry: point,
-      // //     symbol: simpleMarkerSymbol
-      // //   });
-      // //
-      // //   graphicsLayer.add(pointGraphic);
-      // // }
+
+      for (var i = 0; i < longitudes; i++) {
+
+
+
+
+
+      }
 
     });
   </script>
