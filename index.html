@@ -25,97 +25,75 @@
   <!-- <script src='d3/d3.min.js' ></script> -->
 
   <script>
-    // const fetchText = async (url) => {
-    //     const response = await fetch(url);
-    //     return await response.text();
-    // }
-    //
-    // const csv_url = 'https://raw.githubusercontent.com/taekunkim/rockfish/main/1960.csv';
-    // fetchText(csv_url).then(text => {
-    //     console.log(d3.csvParse(text));
-    // })
 
-    d3.csv("1960.csv").then(function(data) {
-        console.log(data[0]['year']);
+    require(["esri/config", "esri/Map", "esri/views/MapView", "esri/Graphic", "esri/layers/GraphicsLayer"], function(esriConfig, Map, MapView, Graphic, GraphicsLayer) {
+      esriConfig.apiKey = "AAPK5be3f01c97514789abf75cecf9eed17aYS60cPwCtzEzXaZy2u42oARgeKjVAUOk-0wu97XRw_4BrzTh8VKPB8DAT4vkvk7H";
+
+      const map = new Map({
+        basemap: "gray-vector" // Basemap layer service
+      });
+
+      const view = new MapView({
+        map: map,
+        center: [-119, 33.5], // Longitude, latitude
+        zoom: 8, // Zoom level
+        container: "viewDiv" // Div element
+      });
+
+      const graphicsLayer = new GraphicsLayer();
+      map.add(graphicsLayer);
+
+      var longitudes = [];
+      var latitudes = [];
+
+      d3.csv("1960.csv").then(function(data) {
+          for(var i = 0; i < data.length; i++) {
+              console.log(data[0]['year']);
+          }
+      });
+
+
+
+      //   for (var i = 0; i < json.length; i++) {
+      //     console.log(i)
+      //
+      //     var row = json[i];
+      //     console.log('row accessed')
+      //     var longitude = row["longitude"];
+      //     var latitude = row["latitude"];
+      //
+      //     console.log('success')
+      //
+      //     longitudes.push(longitude);
+      //     latitudes.push(latitude);
+      //   }
+      // });
+      //
+      // // for (var i = 0; i < longitudes; i++) {
+      // //   const point = { // Create a point
+      // //     type: "point",
+      // //     longitude: longitudes[i],
+      // //     latitude: latitudes[i]
+      // //   };
+      // //
+      // //   const simpleMarkerSymbol = {
+      // //     type: "simple-marker",
+      // //     color: [226, 119, 40], // Orange
+      // //     outline: {
+      // //       color: [255, 255, 255], // White
+      // //       width: 1
+      // //     }
+      // //   };
+      // //
+      // //   const pointGraphic = new Graphic({
+      // //     geometry: point,
+      // //     symbol: simpleMarkerSymbol
+      // //   });
+      // //
+      // //   graphicsLayer.add(pointGraphic);
+      // // }
+
     });
-
-
-
-        var longitudes = [];
-        var latitudes = [];
-    // fetch(url).then(response => {
-    //     response.text().then(text => {
-    //         console.log(text);
-    //     })
-    // })
-
-
-    // require(["esri/config", "esri/Map", "esri/views/MapView", "esri/Graphic", "esri/layers/GraphicsLayer"], function(esriConfig, Map, MapView, Graphic, GraphicsLayer) {
-    //   esriConfig.apiKey = "AAPK5be3f01c97514789abf75cecf9eed17aYS60cPwCtzEzXaZy2u42oARgeKjVAUOk-0wu97XRw_4BrzTh8VKPB8DAT4vkvk7H";
-    //
-    //   const map = new Map({
-    //     basemap: "gray-vector" // Basemap layer service
-    //   });
-    //
-    //   const view = new MapView({
-    //     map: map,
-    //     center: [-119, 33.5], // Longitude, latitude
-    //     zoom: 8, // Zoom level
-    //     container: "viewDiv" // Div element
-    //   });
-    //
-    //   const graphicsLayer = new GraphicsLayer();
-    //   map.add(graphicsLayer);
-    //
-    //   // getData()
-    //   // async function getData() {
-    //   //     const response = await fetch('1960.csv');
-    //   //     const data = await response.text();
-    //   //     console.log(data);
-    //   // }
-    //
-    //   // loadJSON(function(response) {
-    //   //
-    //   //   for (var i = 0; i < json.length; i++) {
-    //   //     console.log(i)
-    //   //
-    //   //     var row = json[i];
-    //   //     console.log('row accessed')
-    //   //     var longitude = row["longitude"];
-    //   //     var latitude = row["latitude"];
-    //   //
-    //   //     console.log('success')
-    //   //
-    //   //     longitudes.push(longitude);
-    //   //     latitudes.push(latitude);
-    //   //   }
-    //   // });
-    //   //
-    //   // // for (var i = 0; i < longitudes; i++) {
-    //   // //   const point = { // Create a point
-    //   // //     type: "point",
-    //   // //     longitude: longitudes[i],
-    //   // //     latitude: latitudes[i]
-    //   // //   };
-    //   // //
-    //   // //   const simpleMarkerSymbol = {
-    //   // //     type: "simple-marker",
-    //   // //     color: [226, 119, 40], // Orange
-    //   // //     outline: {
-    //   // //       color: [255, 255, 255], // White
-    //   // //       width: 1
-    //   // //     }
-    //   // //   };
-    //   // //
-    //   // //   const pointGraphic = new Graphic({
-    //   // //     geometry: point,
-    //   // //     symbol: simpleMarkerSymbol
-    //   // //   });
-    //   // //
-    //   // //   graphicsLayer.add(pointGraphic);
-    //   // // }
-    //
-    // });
   </script>
 
 </head>
