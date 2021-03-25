@@ -23,6 +23,11 @@
   <script>
     var longitudes = [];
     var latitudes = [];
+
+    const url = 'https://raw.githubusercontent.com/taekunkim/rockfish/main/1960.csv';
+    console.log(fetch(url));
+
+    
     require(["esri/config", "esri/Map", "esri/views/MapView", "esri/Graphic", "esri/layers/GraphicsLayer"], function(esriConfig, Map, MapView, Graphic, GraphicsLayer) {
       esriConfig.apiKey = "AAPK5be3f01c97514789abf75cecf9eed17aYS60cPwCtzEzXaZy2u42oARgeKjVAUOk-0wu97XRw_4BrzTh8VKPB8DAT4vkvk7H";
 
@@ -46,11 +51,6 @@
       //     const data = await response.text();
       //     console.log(data);
       // }
-
-       const url = 'https://raw.githubusercontent.com/taekunkim/rockfish/main/1960.csv';
-       console.log(fetch(url));
-
-
 
       // loadJSON(function(response) {
       //
