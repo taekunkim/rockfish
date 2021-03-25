@@ -48,9 +48,14 @@
 
       d3.csv("1960.csv").then(function(data) {
           for(var i = 0; i < data.length; i++) {
-              console.log(data[0]['year']);
+              longitudes.push(data[i]['longitude'])
+              latitudes.push(data[i]['latitude'])
           }
       });
+
+      console.log(longitudes)
+      console.log(latitudes)
+
 
 
 
