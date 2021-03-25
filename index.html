@@ -1,7 +1,7 @@
 <html>
 
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>ArcGIS API for JavaScript Tutorials: Display a map</title>
 
@@ -18,10 +18,11 @@
 
   <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
   <script src="https://js.arcgis.com/4.18/"></script>
-  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script src="https://d3js.org/d3.v6.min.js" charset="utf-8"></script>
+  <!-- <script src='d3/d3.min.js' ></script> -->
 
   <script>
-
+  // d3.node();
     const fetchText = async (url) => {
         const response = await fetch(url);
         return await response.text();
@@ -44,72 +45,72 @@
     // })
 
 
-    require(["esri/config", "esri/Map", "esri/views/MapView", "esri/Graphic", "esri/layers/GraphicsLayer"], function(esriConfig, Map, MapView, Graphic, GraphicsLayer) {
-      esriConfig.apiKey = "AAPK5be3f01c97514789abf75cecf9eed17aYS60cPwCtzEzXaZy2u42oARgeKjVAUOk-0wu97XRw_4BrzTh8VKPB8DAT4vkvk7H";
-
-      const map = new Map({
-        basemap: "gray-vector" // Basemap layer service
-      });
-
-      const view = new MapView({
-        map: map,
-        center: [-119, 33.5], // Longitude, latitude
-        zoom: 8, // Zoom level
-        container: "viewDiv" // Div element
-      });
-
-      const graphicsLayer = new GraphicsLayer();
-      map.add(graphicsLayer);
-
-      // getData()
-      // async function getData() {
-      //     const response = await fetch('1960.csv');
-      //     const data = await response.text();
-      //     console.log(data);
-      // }
-
-      // loadJSON(function(response) {
-      //
-      //   for (var i = 0; i < json.length; i++) {
-      //     console.log(i)
-      //
-      //     var row = json[i];
-      //     console.log('row accessed')
-      //     var longitude = row["longitude"];
-      //     var latitude = row["latitude"];
-      //
-      //     console.log('success')
-      //
-      //     longitudes.push(longitude);
-      //     latitudes.push(latitude);
-      //   }
-      // });
-      //
-      // // for (var i = 0; i < longitudes; i++) {
-      // //   const point = { // Create a point
-      // //     type: "point",
-      // //     longitude: longitudes[i],
-      // //     latitude: latitudes[i]
-      // //   };
-      // //
-      // //   const simpleMarkerSymbol = {
-      // //     type: "simple-marker",
-      // //     color: [226, 119, 40], // Orange
-      // //     outline: {
-      // //       color: [255, 255, 255], // White
-      // //       width: 1
-      // //     }
-      // //   };
-      // //
-      // //   const pointGraphic = new Graphic({
-      // //     geometry: point,
-      // //     symbol: simpleMarkerSymbol
-      // //   });
-      // //
-      // //   graphicsLayer.add(pointGraphic);
-      // // }
-
-    });
+    // require(["esri/config", "esri/Map", "esri/views/MapView", "esri/Graphic", "esri/layers/GraphicsLayer"], function(esriConfig, Map, MapView, Graphic, GraphicsLayer) {
+    //   esriConfig.apiKey = "AAPK5be3f01c97514789abf75cecf9eed17aYS60cPwCtzEzXaZy2u42oARgeKjVAUOk-0wu97XRw_4BrzTh8VKPB8DAT4vkvk7H";
+    //
+    //   const map = new Map({
+    //     basemap: "gray-vector" // Basemap layer service
+    //   });
+    //
+    //   const view = new MapView({
+    //     map: map,
+    //     center: [-119, 33.5], // Longitude, latitude
+    //     zoom: 8, // Zoom level
+    //     container: "viewDiv" // Div element
+    //   });
+    //
+    //   const graphicsLayer = new GraphicsLayer();
+    //   map.add(graphicsLayer);
+    //
+    //   // getData()
+    //   // async function getData() {
+    //   //     const response = await fetch('1960.csv');
+    //   //     const data = await response.text();
+    //   //     console.log(data);
+    //   // }
+    //
+    //   // loadJSON(function(response) {
+    //   //
+    //   //   for (var i = 0; i < json.length; i++) {
+    //   //     console.log(i)
+    //   //
+    //   //     var row = json[i];
+    //   //     console.log('row accessed')
+    //   //     var longitude = row["longitude"];
+    //   //     var latitude = row["latitude"];
+    //   //
+    //   //     console.log('success')
+    //   //
+    //   //     longitudes.push(longitude);
+    //   //     latitudes.push(latitude);
+    //   //   }
+    //   // });
+    //   //
+    //   // // for (var i = 0; i < longitudes; i++) {
+    //   // //   const point = { // Create a point
+    //   // //     type: "point",
+    //   // //     longitude: longitudes[i],
+    //   // //     latitude: latitudes[i]
+    //   // //   };
+    //   // //
+    //   // //   const simpleMarkerSymbol = {
+    //   // //     type: "simple-marker",
+    //   // //     color: [226, 119, 40], // Orange
+    //   // //     outline: {
+    //   // //       color: [255, 255, 255], // White
+    //   // //       width: 1
+    //   // //     }
+    //   // //   };
+    //   // //
+    //   // //   const pointGraphic = new Graphic({
+    //   // //     geometry: point,
+    //   // //     symbol: simpleMarkerSymbol
+    //   // //   });
+    //   // //
+    //   // //   graphicsLayer.add(pointGraphic);
+    //   // // }
+    //
+    // });
   </script>
 
 </head>
